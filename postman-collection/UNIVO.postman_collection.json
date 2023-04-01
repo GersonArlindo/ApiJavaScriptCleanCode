@@ -1,0 +1,791 @@
+{
+	"info": {
+		"_postman_id": "d1ba6e64-5874-4562-8407-cbeb495e770e",
+		"name": "UNIVO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24708459"
+	},
+	"item": [
+		{
+			"name": "POO Server",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Auth Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"gerson@google.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "User Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Gerson\",\n    \"email\": \"gerson@google.com\",\n    \"google\": true,\n    \"password\": \"123456\",\n    \"role\": \"USER_ROLE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test updated ddddddd\",\n    \"email\": \"testdawsssss@google.com\",\n    \"password\": \"123456ddd\",\n    \"role\": \"SUPER_ROLE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/users/63e46b5d919be85552108450",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"63e46b5d919be85552108450"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2U2YjlkZjBmMmFkZDk4ZTQwNjYxZjUiLCJpYXQiOjE2NzYxNDc3MDIsImV4cCI6MTY3NjE2MjEwMn0.uGGB92V6T3EsLXePQNLW7zw3ZIuDaFpEa_x93IqReOY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/users/63e80eccb6d1f9229291de91",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"63e80eccb6d1f9229291de91"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Categories  Put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNTBhOTJkMzg3NGZmYzg5MWJkZDEiLCJpYXQiOjE2Nzk5NzA1MjQsImV4cCI6MTY4MDA1NjkyNH0.0o3ZshsSuV8dKxzRM2k7hHIbJ_nPAxdNDoYamhS7_dM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"names\": \"Orders\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/categories/63e834904b89fbf10fd69820",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories",
+										"63e834904b89fbf10fd69820"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories  Get by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/categories/63e834904b89fbf10fd69820",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories",
+										"63e834904b89fbf10fd69820"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories  Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/categories/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories  Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/categories/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories  Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNTBhOTJkMzg3NGZmYzg5MWJkZDEiLCJpYXQiOjE2ODAxNDIxNDMsImV4cCI6MTY4MDIyODU0M30.hRJ77Aq1bLZmPBHrVirt-D6_pMr2pgk9UHr9xsPCurs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"CALZADO\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/categories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Product  Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products  Get by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products  Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products  Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products  Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNTBhOTJkMzg3NGZmYzg5MWJkZDEiLCJpYXQiOjE2ODAxNDIxNDMsImV4cCI6MTY4MDIyODU0M30.hRJ77Aq1bLZmPBHrVirt-D6_pMr2pgk9UHr9xsPCurs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Pantalones de Caballero\",\n    \"precio\": 30,\n    \"category\": \"6424ef62fd3cb1d9e9112dae\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/products",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Header Bill",
+					"item": [
+						{
+							"name": "HeaderBill  Put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNTBhOTJkMzg3NGZmYzg5MWJkZDEiLCJpYXQiOjE2ODAwNTc1NTEsImV4cCI6MTY4MDE0Mzk1MX0.YAYSslkcz_yxN09LIR-hFcksqvVmH-kn2ic81QVarqs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"_id\": \"6423a6e56f0bdc7d941302b5\",\r\n    \"gran_total\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/headerbill/6423a6e56f0bdc7d941302b5",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"headerbill",
+										"6423a6e56f0bdc7d941302b5"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "HeaderBill  Get by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/headerbill/642503fa2b6ef16f03c443a0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"headerbill",
+										"642503fa2b6ef16f03c443a0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "HeaderBill  Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/headerbill/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"headerbill",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "HeaderBill Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "HeaderBill  Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNTBhOTJkMzg3NGZmYzg5MWJkZDEiLCJpYXQiOjE2ODAxNDc0MjgsImV4cCI6MTY4MDIzMzgyOH0.eYQTRFgmN_FNAVtUtDoAbvzpa189rwegNU2DPe77ePM",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user\": \"642250a92d3874ffc891bdd1\",\n    \"gran_total\": 0\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/headerbill",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"headerbill"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bill Detail",
+					"item": [
+						{
+							"name": "HeaderBill  Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BillDetail  Get by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/billdetail/64250601da300aa104cb26e8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"billdetail",
+										"64250601da300aa104cb26e8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BillDetail  Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/billdetail/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"billdetail",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BillDetail  Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "BillDetail  Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDIyNTBhOTJkMzg3NGZmYzg5MWJkZDEiLCJpYXQiOjE2ODAxNDIxNDMsImV4cCI6MTY4MDIyODU0M30.hRJ77Aq1bLZmPBHrVirt-D6_pMr2pgk9UHr9xsPCurs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id_bill\": \"642503fa2b6ef16f03c443a0\",\n  \"product_details\": [\n    {\n      \"product_id\": \"6424efaefd3cb1d9e9112dbc\",\n      \"product_unit\": 1\n    },    \n    {\n      \"product_id\": \"6424efd1fd3cb1d9e9112dc1\",\n      \"product_unit\": 3\n    },\n    {\n      \"product_id\": \"6424efe6fd3cb1d9e9112dc6\",\n      \"product_unit\": 2\n    },\n    {\n      \"product_id\": \"6424effdfd3cb1d9e9112dcb\",\n      \"product_unit\": 3\n    },\n    {\n      \"product_id\": \"6424f011fd3cb1d9e9112dd0\",\n      \"product_unit\": 3\n    },\n    {\n      \"product_id\": \"6424f066fd3cb1d9e9112ddc\",\n      \"product_unit\": 3\n    },\n    {\n      \"product_id\": \"6424f07dfd3cb1d9e9112de1\",\n      \"product_unit\": 3\n    },\n    {\n      \"product_id\": \"6424f096fd3cb1d9e9112de6\",\n      \"product_unit\": 3\n    },\n    {\n      \"product_id\": \"642502e505230bf56e954d5b\",\n      \"product_unit\": 3\n    },\n    {\n      \"product_id\": \"6425030605230bf56e954d60\",\n      \"product_unit\": 3\n    },\n    {\n      \"product_id\": \"6425033f05230bf56e954d71\",\n      \"product_unit\": 3\n    }\n  ]\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/billdetail",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"billdetail"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Find",
+					"item": [
+						{
+							"name": "Find",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Upload",
+					"item": [
+						{
+							"name": "Upload File",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/erwin_vides/Downloads/Factura.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/uploads",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"uploads"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User File",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/erwin_vides/Downloads/udemy invoice.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/uploads/users/63e46b5d919be85552108450",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"uploads",
+										"users",
+										"63e46b5d919be85552108450"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Products File",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/erwin_vides/Downloads/udemy invoice.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/uploads/users/63e46b5d919be85552108450",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"uploads",
+										"users",
+										"63e46b5d919be85552108450"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products File",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/erwin_vides/Downloads/udemy invoice.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/uploads/users/63e46b5d919be85552108450",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"uploads",
+										"users",
+										"63e46b5d919be85552108450"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3030"
+		}
+	]
+}
