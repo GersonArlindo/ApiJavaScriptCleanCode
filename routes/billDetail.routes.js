@@ -4,7 +4,6 @@ const {
   getBillDetails,
   getBillDetailById,
   createBillDetail,
-  //updateProduct,
 } = require("../controllers/billDetail.controller");
 
 const { validateJWT, validateFields } = require("../middleware");
@@ -45,29 +44,5 @@ router.post(
   ],
   createBillDetail
 );
-
-// router.put(
-//   "/:id",
-//   [
-//     validateJWT,
-//     check("name", "name is mandatory").not().isEmpty(),
-//     check("id", "is not a mongoID").isMongoId(),
-//     check("id").custom(productExistById),
-//     validateFields,
-//   ],
-//   updateProduct
-// );
-
-// router.delete(
-//   "/:id",
-//   [
-//     validateJWT,
-//     isAdminRole,
-//     check("id", "is not a mongoID").isMongoId(),
-//     check("id").custom(productExistById),
-//     validateFields,
-//   ],
-//   deleteProduct
-// );
 
 module.exports = router;

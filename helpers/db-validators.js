@@ -38,9 +38,11 @@ const allowedCollections = async (collection = "", collections = []) => {
 };
 
 /*Mis funciones para validar*/
+const LIMITE_MAX_PRODUCT0 = 7;
+const LIMITE_MAX_DIFERENT_PRODUCTS = 10;
 const validateProductUnit = (value, { req }) => {
   const { product_details } = req.body;
-  const invalidUnits = product_details.filter((detail) => detail.product_unit > 7);
+  const invalidUnits = product_details.filter((detail) => detail.product_unit > LIMITE_MAX_PRODUCT0);
   if (invalidUnits.length > 0) {
     throw new Error("The product unit must be less than or equal to 7");
   }
@@ -50,7 +52,7 @@ const validateProductUnit = (value, { req }) => {
 const validateDistinctProducts = (value, { req }) => {
   const { product_details } = req.body;
   const distinctProductIds = new Set(product_details.map((detail) => detail.product_id));
-  if (distinctProductIds.size > 10) {
+  if (distinctProductIds.size > LIMITE_MAX_DIFERENT_PRODUCTS) {
     throw new Error("Only up to 10 different products can be purchased");
   }
   return true;

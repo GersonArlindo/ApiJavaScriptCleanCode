@@ -5,13 +5,8 @@ const bcryptjs = require("bcryptjs");
 const User = require("../models/user.model");
 
 const usersGet = async (req, res = response) => {
-  // const query = req.query;
   const { limit = 5, from = 0 } = req.query;
   const query = { status: true };
-  // const users = await User.find(query).skip(from).limit(limit);
-
-  // const total = await User.countDocuments(query);
-
   const [users, total] = await Promise.all([
     User.find(query).skip(from).limit(limit),
     User.countDocuments(query),

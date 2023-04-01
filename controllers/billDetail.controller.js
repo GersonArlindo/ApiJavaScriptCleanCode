@@ -98,6 +98,4 @@ module.exports = {
   getBillDetails,
   getBillDetailById,
   createBillDetail,
-  //updateProduct,
-  //deleteProduct,
 };

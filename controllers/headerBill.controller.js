@@ -7,7 +7,6 @@ const getHeaderBills = async (req, res = response) => {
   const [headerbills, total] = await Promise.all([
     HeaderBill.find(query)
       .populate("user", "name")
-      //.populate("billDetail", "precio_total")
       .skip(from)
       .limit(limit),
       HeaderBill.countDocuments(query),
@@ -22,7 +21,6 @@ const getHeaderBillById = async (req = request, res = response) => {
   const { id } = req.params;
   const headerbill = await HeaderBill.findById(id)
     .populate("user", "name")
-    //.populate("billDetail", "precio_total");
   res.status(200).json(headerbill);
 };
 
@@ -45,20 +43,10 @@ const updateHeaderBill = async (req, res) => {
   res.json(headerbill);
 };
 
-// const deleteProduct = async (req, res) => {
-//   const { id } = req.params;
-//   const deletedProduct = await Product.findByIdAndUpdate(
-//     id,
-//     { status: false },
-//     { new: true }
-//   );
-//   res.json(deletedProduct);
-// };
 
 module.exports = {
   getHeaderBills,
   getHeaderBillById,
   createHeaderBill,
   updateHeaderBill
-  //deleteProduct,
 };
